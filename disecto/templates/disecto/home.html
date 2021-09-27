@@ -1,0 +1,40 @@
+{% extends "disecto/main.html" %}
+
+{% block content %}
+    <div style=" 
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; ">
+        <div style="width: 80%;
+        border-radius: 15px ;
+        height: auto;
+        margin: 10px;
+        padding: 5px;
+        margin-top: 20px;
+        padding-top: 20px;
+        text-align: center;
+        background:antiquewhite;
+       ">      
+        <div>
+        <h4 style="margin: 10px;">Website Testing</h4>
+            <button type="button" class="btn btn-outline-secondary"><a href="disecto/buyproduct/">Buy Product</a></button>
+            <!-- <button type="button" class="btn btn-outline-success"><a href="invoices/invoicetemplate/">Invoice Editor</a></button> -->
+            <button type="button" class="btn btn-outline-danger"><a href="disecto/orders/">Orders</a></button>
+            <button type="button" class="btn btn-outline-secondary"><a href="disecto/addproducts/">Add Products</a></button>
+            <button type="button" class="btn btn-outline-success"><a href="disecto/productlist/">List Products</a></button>
+        <h4 style="margin: 10px;">Api Testing</h4>    
+            <button type="button" class="btn btn-outline-secondary"><a href="api/products/">Product List</a></button>
+            <button type="button" class="btn btn-outline-secondary"><a href="api/invoices/">Invoice List</a></button>
+
+            <button type="button" class="btn btn-outline-secondary"><a href="api/orders/">Orders List</a></button>
+        <h4 style="margin: 10px;">Generate Invoice</h4>
+           <button class="btn btn-outline-secondary"><a href="invoice/">Invoice List</a></button>
+           <button class="btn btn-outline-secondary"><a href="create/">Create New Invoice</a></button>     
+        </div>
+       </div>
+    </div>
+
+{% endblock content %}

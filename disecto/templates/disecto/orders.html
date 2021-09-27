@@ -1,0 +1,51 @@
+{% extends "disecto/main.html" %}
+
+{% block content %}
+    <div style=" 
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; ">
+        <div style="width: 80%;
+        border-radius: 15px ;
+        height: auto;
+        margin: 10px;
+        padding: 5px;
+        text-align: center;
+        background:antiquewhite;
+       ">  
+       <h3>Orders</h3>
+       <button class="btn btn-outline-secondary"><a href="/">Home</a></button>
+       <button class="btn btn-outline-secondary"><a href="/disecto/productlist/">Product List</a></button>
+       <button class="btn btn-outline-secondary"><a href="/disecto/buyproduct/">Buy Product</a></button>
+       <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID(Key)</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantity Available</th>
+            <th scope="col">Edit</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for i in order %}
+          <tr>
+            <th scope="row">{{i.id}}</th>
+            <td>{{ i.product }}</td>
+            
+            <td>{{i.product.price}}</td>
+            <td>{{i.quantity}}</td> 
+            <td><button  class="btn btn-secondary"><a href="{% url 'disecto:updateorders' i.id%}">Update</a></button>
+            <button class="btn btn-danger"><a href="{% url 'disecto:deleteorders' i.id%}">Delete</a></button></td>
+          </tr>
+          {% endfor%}
+        </tbody>
+      </table>  
+       
+       </div>
+    </div>
+
+{% endblock content %}
